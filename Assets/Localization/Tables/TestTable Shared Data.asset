@@ -16,11 +16,15 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 17176d1303ba3f94fb063e3658349d23
   m_Entries:
   - m_Id: 86568656896
-    m_Key: item
+    m_Key: err0001_phenomenon
     m_Metadata:
       m_Items: []
-  - m_Id: 3214915461120
-    m_Key: New Entry
+  - m_Id: 199668668874752
+    m_Key: err0001_cause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 199668668874753
+    m_Key: err0002
     m_Metadata:
       m_Items: []
   m_Metadata:
