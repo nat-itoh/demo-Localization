@@ -19,11 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 86568656896
-    m_Localized: Error
-    m_Metadata:
-      m_Items: []
-  - m_Id: 199668668874753
-    m_Localized: a
+    m_Localized: Message
     m_Metadata:
       m_Items: []
   references:

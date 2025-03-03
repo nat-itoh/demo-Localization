@@ -1,10 +1,8 @@
 using System;
-using UnityEngine;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UniRx;
 
-namespace Project.Localization {
+namespace UnityEngine.Localization {
 
     public static class ObservableLocalizationEvent {
 
