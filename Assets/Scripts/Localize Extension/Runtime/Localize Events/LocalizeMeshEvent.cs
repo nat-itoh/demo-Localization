@@ -5,36 +5,38 @@ using UnityEditor;
 using UnityEditor.Events;
 #endif
 
-namespace UnityEngine.Localization.Components {
-
-
-    [Serializable]
-    public class LocalizedMesh : LocalizedAsset<Mesh> { }
-
+namespace UnityEngine.Localization {
 
     [Serializable]
     public class UnityEventMesh : UnityEvent<Mesh> { }
+}
 
 
+namespace UnityEngine.Localization.Components
+{
     /// <summary>
-    /// <see cref="Mesh"/> —p‚Ì LocalizedAssetEvent.
+    /// <see cref="Mesh"/> ç”¨ã®LocalizedAssetEvent.
     /// </summary>
-    [AddComponentMenu("Localization/Asset/Localize Mesh Event")]
-    public sealed class LocalizeMeshEvent : LocalizedAssetEvent<Mesh, LocalizedMesh, UnityEventMesh> {
+    [AddComponentMenu("Localization/Asset/" + nameof(LocalizeMeshEvent))]
+    public sealed class LocalizeMeshEvent : LocalizedAssetEvent<Mesh, LocalizedMesh, UnityEventMesh>
+    {
 
 #if UNITY_EDITOR
         [MenuItem("CONTEXT/MeshFilter/Localize")]
-        private static void AttachAndSetupForMeshFilter(MenuCommand command) {
+        private static void AttachAndSetupForMeshFilter(MenuCommand command)
+        {
             var target = (MeshFilter)command.context;
             AttachAndSetupForMeshFilter(target);
         }
 
-        public static LocalizeMeshEvent AttachAndSetupForMeshFilter(MeshFilter target) {
+        public static LocalizeMeshEvent AttachAndSetupForMeshFilter(MeshFilter target)
+        {
             var localizeEvent = (LocalizeMeshEvent)Undo.AddComponent(target.gameObject, typeof(LocalizeMeshEvent));
 
-            // ƒCƒxƒ“ƒg”­¶‚ÉsharedMesh‚ª•ÏX‚³‚ê‚é‚æ‚¤‚É
+            // ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sharedMeshï¿½ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½ï¿½æ‚¤ï¿½ï¿½
             var setMethod = typeof(MeshFilter).GetProperty("sharedMesh")?.GetSetMethod();
-            if (setMethod != null) {
+            if (setMethod != null)
+            {
                 var methodDelegate = (UnityAction<Mesh>)Delegate.CreateDelegate(typeof(UnityAction<Mesh>), target, setMethod);
                 UnityEventTools.AddPersistentListener(localizeEvent.OnUpdateAsset, methodDelegate);
                 localizeEvent.OnUpdateAsset.SetPersistentListenerState(0, UnityEventCallState.EditorAndRuntime);

@@ -3,20 +3,23 @@ using UnityEngine.Events;
 using TMPro;
 
 // [REF]
-//  ƒfƒjƒbƒL: TextMeshPro ‚Ì•¶š‚¾‚¯‚Å‚È‚­ƒtƒHƒ“ƒg‚à‘I‘ğŒ¾Œê‚É‰‚¶‚Ä©“®“I‚É•Ï‚¦‚éƒGƒfƒBƒ^Šg’£ https://xrdnk.hateblo.jp/entry/localized_textmeshpro_font
-//  LIGHT11: ‚ ‚ç‚ä‚éí—Ş‚ÌƒAƒZƒbƒg‚ğƒ[ƒJƒ‰ƒCƒY‚Å‚«‚é‚æ‚¤‚É‚·‚é•û–@‚Ü‚Æ‚ß https://light11.hatenadiary.com/entry/2022/03/28/193708
+//  ï¿½fï¿½jï¿½bï¿½L: TextMeshPro ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚È‚ï¿½ï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‰ï¿½ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½Iï¿½É•Ï‚ï¿½ï¿½ï¿½Gï¿½fï¿½Bï¿½^ï¿½gï¿½ï¿½ https://xrdnk.hateblo.jp/entry/localized_textmeshpro_font
+//  LIGHT11: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş‚ÌƒAï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Jï¿½ï¿½ï¿½Cï¿½Yï¿½Å‚ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Ü‚Æ‚ï¿½ https://light11.hatenadiary.com/entry/2022/03/28/193708
 
-namespace UnityEngine.Localization.Components {
+namespace UnityEngine.Localization
+{
+    [Serializable]
+    public class UnityEventTmpFont : UnityEvent<TMP_FontAsset> { }
+}
+
+
+namespace UnityEngine.Localization.Components
+{
 
     /// <summary>
-    /// TmpFontAsset —p‚Ì LocalizedAssetEvent
+    /// <see cref="TMP_FontAsset"/> ç”¨ã®LocalizedAssetEventï¼
     /// </summary>
     [AddComponentMenu("Localization/Asset/" + nameof(LocalizeTmpFontEvent))]
     public sealed class LocalizeTmpFontEvent : LocalizedAssetEvent<TMP_FontAsset, LocalizedTmpFont, UnityEventTmpFont> { }
 
-    /// <summary>
-    /// TmpFontAsset ‚ğˆø”‚Æ‚·‚é Unity Event
-    /// </summary>
-    [Serializable]
-    public class UnityEventTmpFont : UnityEvent<TMP_FontAsset> { }
 }

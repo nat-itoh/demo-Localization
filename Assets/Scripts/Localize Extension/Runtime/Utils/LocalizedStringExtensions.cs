@@ -4,13 +4,16 @@ using UniRx;
 
 namespace UnityEngine.Localization {
 
-    public static class LocalizedStringExtensions {
+    public static class LocalizedStringExtensions
+    {
 
         /// <summary>
-        /// <see cref="LocalizedString.StringChanged"/>‚ğObservable‚Æ‚µ‚Äˆµ‚¤Šg’£ƒƒ\ƒbƒhD
+        /// <see cref="LocalizedString.StringChanged"/>ã‚’Observableã¸å¤‰æ›ã™ã‚‹æ‹¡å¼µãƒ¡ã‚½ãƒƒãƒ‰ï¼
         /// </summary>
-        public static IObservable<string> StringChangedAsObservable(this LocalizedString localizedString) {
-            return Observable.Create<string>(observer => {
+        public static IObservable<string> StringChangedAsObservable(this LocalizedString localizedString)
+        {
+            return Observable.Create<string>(observer =>
+            {
                 void Handler(string newValue) => observer.OnNext(newValue);
 
                 localizedString.StringChanged += Handler;
@@ -18,5 +21,8 @@ namespace UnityEngine.Localization {
                 return Disposable.Create(() => localizedString.StringChanged -= Handler);
             });
         }
+        
+        
+        
     }
 }

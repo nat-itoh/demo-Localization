@@ -1,27 +1,27 @@
 # if UNITY_EDITOR
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEditor;
 using UnityEditor.Events;
 using TMPro;
-using UnityEngine.Events;
 
 namespace UnityEngine.Localization.Components {
 
     /// <summary>
-    /// TextMeshPro‚ğ©“®“I‚Éƒ[ƒJƒ‰ƒCƒYİ’è‚·‚éƒGƒfƒBƒ^Šg’£
+    /// TextMeshProï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½Éƒï¿½ï¿½[ï¿½Jï¿½ï¿½ï¿½Cï¿½Yï¿½İ’è‚·ï¿½ï¿½Gï¿½fï¿½Bï¿½^ï¿½gï¿½ï¿½
     /// </summary>
     internal static class LocalizeComponent_TMProExtension {
         
         [MenuItem("CONTEXT/TextMeshProUGUI/Localize With Font")]
-        static void LocalizeTMProTextWithFontAssets(MenuCommand command) {
+        private static void LocalizeTMProTextWithFontAssets(MenuCommand command) {
             var target = command.context as TextMeshProUGUI;
             SetupForLocalizeString(target);
             SetupForLocalizeTmpFont(target);
         }
 
         /// <summary>
-        /// LocalizeStringEvent ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğƒAƒ^ƒbƒ`‚·‚é‚Æ“¯‚É©“®“I‚É UpdateAsset ƒCƒxƒ“ƒg‚É text ƒvƒƒpƒeƒB‚ğ•ÏX‚·‚éˆ—‚ğ’Ç‰Á‚·‚é
+        /// LocalizeStringEvent ï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Aï¿½^ï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½Æ“ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ UpdateAsset ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ï¿½ text ï¿½vï¿½ï¿½ï¿½pï¿½eï¿½Bï¿½ï¿½ÏXï¿½ï¿½ï¿½éˆï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <param name="target">TextMeshProUGUI</param>
         private static void SetupForLocalizeString(TextMeshProUGUI target) {
@@ -34,7 +34,7 @@ namespace UnityEngine.Localization.Components {
         }
 
         /// <summary>
-        /// LocalizeTmpFontEvent ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğƒAƒ^ƒbƒ`‚·‚é‚Æ“¯‚É©“®“I‚É UpdateAsset ƒCƒxƒ“ƒg‚É font ƒvƒƒpƒeƒB‚ğ•ÏX‚·‚éˆ—‚ğ’Ç‰Á‚·‚é
+        /// LocalizeTmpFontEvent ï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Aï¿½^ï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½Æ“ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ UpdateAsset ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ï¿½ font ï¿½vï¿½ï¿½ï¿½pï¿½eï¿½Bï¿½ï¿½ÏXï¿½ï¿½ï¿½éˆï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <param name="target">TextMeshProUGUI</param>
         private static void SetupForLocalizeTmpFont(TextMeshProUGUI target) {
